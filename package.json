@@ -1,0 +1,19 @@
+{
+    "name": "jquery-pimcore-formbuilder",
+    "version": "1.0.0",
+    "description": "jQuery Extensions for the PIMCORE Form Builder",
+    "author": "Stefan Hagspiel <shagspiel@dachcom.ch> (https://www.dachcom.com)",
+    "license": "GPL-3.0-or-later",
+    "main": "dist/jquery.fb.core.js",
+    "peerDependencies": {
+        "jquery": "1.9.1 - 3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dachcom-digital/jquery-pimcore-formbuilder"
+    },
+    "bugs": {
+        "url": "https://github.com/dachcom-digital/jquery-pimcore-formbuilder/issues"
+    },
+    "homepage": "https://github.com/dachcom-digital/jquery-pimcore-formbuilder"
+}
