@@ -4,6 +4,9 @@ This Plugin will enable reCAPTCHA v3 functionality on your form. Workflow:
 - Loads `https://www.google.com/recaptcha/api.js` if not available
 - Adds token to captcha field on your form
 
+## Back-End Configuration
+First, you need to set up some server side configuration via form builder. Read more about it [here](https://github.com/dachcom-digital/pimcore-formbuilder/blob/master/docs/03_SpamProtection.md#recaptcha-v3). 
+
 ## Enable Extension
 ```js
 import 'jquery-pimcore-formbuilder/dist/jquery.fb.ext.recaptcha-v3';
