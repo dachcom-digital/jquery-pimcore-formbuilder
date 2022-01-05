@@ -1,6 +1,6 @@
 {
     "name": "jquery-pimcore-formbuilder",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "jQuery Extensions for the PIMCORE Form Builder",
     "author": "Stefan Hagspiel <shagspiel@dachcom.ch> (https://www.dachcom.com)",
     "license": "GPL-3.0-or-later",
