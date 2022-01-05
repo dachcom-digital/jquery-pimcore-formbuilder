@@ -250,7 +250,7 @@
          */
         setupDynamicMultiFiles: function () {
 
-            var $fields, $refField, jsHandler;
+            var $fields, $refField, jsHandler, formFileHandler;
 
             if (!this.options.setupFileUpload) {
                 return;
@@ -267,7 +267,8 @@
 
             if (this.options.dynamicMultiFileHandlerOptions.defaultHandlerPath === null) {
                 if (typeof window.formBuilderDynamicMultiFileHandler !== 'undefined') {
-                    window.formBuilderDynamicMultiFileHandler.init(this.$form, $fields, this.ajaxUrls, this.options.dynamicMultiFileHandlerOptions);
+                    formFileHandler = new window.formBuilderDynamicMultiFileHandler();
+                    formFileHandler.init(this.$form, $fields, this.ajaxUrls, this.options.dynamicMultiFileHandlerOptions);
                 }
 
                 return;
@@ -279,8 +280,10 @@
             }
 
             $.getScript(this.options.dynamicMultiFileHandlerOptions.defaultHandlerPath + '/jquery.fb.dmf.' + jsHandler + '.js', function (data, textStatus, jqxhr) {
+                var formFileHandler;
                 if (jqxhr.status === 200) {
-                    window.formBuilderDynamicMultiFileHandler.init(this.$form, $fields, this.ajaxUrls, this.options.dynamicMultiFileHandlerOptions);
+                    formFileHandler = new window.formBuilderDynamicMultiFileHandler();
+                    formFileHandler.init(this.$form, $fields, this.ajaxUrls, this.options.dynamicMultiFileHandlerOptions);
                 }
             }.bind(this));
 

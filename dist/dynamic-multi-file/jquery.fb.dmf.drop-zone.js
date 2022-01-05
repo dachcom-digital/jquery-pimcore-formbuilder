@@ -19,15 +19,10 @@
 
         init: function ($form, $dmfFields, dataUrls, options) {
 
-            if (this.initialized === true) {
-                return;
-            }
-
             this.$form = $form;
             this.$dmfFields = $dmfFields;
             this.dataUrls = dataUrls;
             this.options = options;
-            this.initialized = true;
 
             this.prepareLibrary();
         },
@@ -280,10 +275,10 @@
     });
 
     if (typeof window.formBuilderDynamicMultiFileHandler !== 'undefined') {
-        throw 'Another dynamic multi file handler already has been defined. Only one handler allowed.';
+        return;
     }
 
     // window instance requires to be called "formBuilderDynamicMultiFileHandler"
-    window.formBuilderDynamicMultiFileHandler = new FormBuilderDynamicMultiFileDropZone();
+    window.formBuilderDynamicMultiFileHandler = FormBuilderDynamicMultiFileDropZone;
 
 })));
