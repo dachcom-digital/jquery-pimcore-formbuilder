@@ -11,7 +11,7 @@ npm i jquery-depends-on
 
 ### Via CDN 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/jquery-depends-on@1.5.1/src/dependsOn.min.js"></script>
+<script src="https://gistcdn.githack.com/solverat/5a70ea1b21eaff050460294094ec052d/raw/96d9e93f2f7beae8e6828ab46c8ec859d24f3bc8/dependsOn.min.js"></script>
 ```
 
 ## Enable Extension
