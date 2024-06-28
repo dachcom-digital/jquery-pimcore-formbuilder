@@ -14,7 +14,8 @@ npm i jquery-pimcore-formbuilder
 - [Conditional Logic Extension](./docs/02_conditionalLogic.md)
 - [Repeater Extension](./docs/03_repeater.md)
 - [Tracker Extension](./docs/04_tracker.md)
-- [reCAPTCHA V3 Extension](./docs/05_recaptchaV3.md)
+- [reCAPTCHA V3 Extension](./docs/05_1_recaptchaV3.md)
+- [Friendly Captcha Extension](./docs/05_2_friendlyCaptcha.md)
 
 ## Upgrade Notes
 
