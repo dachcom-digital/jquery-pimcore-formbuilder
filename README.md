@@ -18,5 +18,8 @@ npm i jquery-pimcore-formbuilder
 
 ## Upgrade Notes
 
+### 1.1.0
+- **[NEW FEATURE]**: Add FriendlyCaptcha Component
+
 ### 1.0.1
 - Allow multiple Instances [#1](https://github.com/dachcom-digital/jquery-pimcore-formbuilder/issues/1)
