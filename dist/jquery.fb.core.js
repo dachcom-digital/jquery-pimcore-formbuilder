@@ -146,7 +146,6 @@
                 case 'bootstrap_5_horizontal_layout':
                     return this.themeTransform.bootstrap5[action].apply(null, args);
                 default:
-                default:
                     console.warn('unknown validation transformer action.', action);
                     break;
             }
