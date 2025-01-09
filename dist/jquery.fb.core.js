@@ -104,6 +104,25 @@
                         $multipleValidatedInputElements.find('input:checkbox,input:radio').removeAttr('required');
                     }
                 }
+            },
+            'bootstrap5': {
+                addValidationMessage: function ($fields, messages) {
+                    $fields.addClass('is-invalid');
+
+                    $fields.each(function () {
+                        var $thisField = $(this);
+                        $thisField.siblings('.invalid-feedback').remove();
+
+                        $.each(messages, function (validationType, message) {
+                            var $error = $('<div/>', {'class': 'invalid-feedback', 'text': message});
+                            $thisField.after($error);
+                        });
+                    });
+                },
+                removeFormValidations: function ($form) {
+                    $form.find('.is-invalid').removeClass('is-invalid');
+                    $form.find('.invalid-feedback').remove();
+                }
             }
         };
 
@@ -123,6 +142,10 @@
                 case 'bootstrap_4_layout':
                 case 'bootstrap_4_horizontal_layout':
                     return this.themeTransform.bootstrap4[action].apply(null, args);
+                case 'bootstrap_5_layout':
+                case 'bootstrap_5_horizontal_layout':
+                    return this.themeTransform.bootstrap5[action].apply(null, args);
+                default:
                 default:
                     console.warn('unknown validation transformer action.', action);
                     break;
