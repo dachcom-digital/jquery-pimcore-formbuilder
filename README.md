@@ -21,6 +21,7 @@ npm i jquery-pimcore-formbuilder
 
 ### 1.2.0
 - **[NEW FEATURE]**: Bootstrap 5 layout support
+- **[SECURITY]**: Extend file upload handlers to include fieldReference in requests for better form tracking (Formbuilder 5.3.4 Support)
 
 ### 1.1.0
 - **[NEW FEATURE]**: Add FriendlyCaptcha Component

@@ -59,6 +59,7 @@
                 $template = $el.find('.qq-uploader-wrapper:first'),
                 $element = $el.find('.qq-upload-container'),
                 fieldId = $el.data('field-id'),
+                fieldReference = $el.data('fieldReference') ?? '',
                 storageFieldId = fieldId + '_data',
                 $storageField = this.$form.find('input[type="hidden"][id="' + storageFieldId + '"]'),
                 config = $el.data('engine-options'),
@@ -81,18 +82,27 @@
                         enabled: true
                     },
                     success: {
-                        endpoint: _.getDataUrl('file_chunk_done')
+                        endpoint: _.getDataUrl('file_chunk_done'),
+                        params: {
+                            fieldReference: fieldReference
+                        }
                     }
                 },
                 request: {
-                    endpoint: _.getDataUrl('file_add')
+                    endpoint: _.getDataUrl('file_add'),
+                    params: {
+                        fieldReference: fieldReference
+                    }
                 },
                 deleteFile: {
                     confirmMessage: config.messages.delete.confirmMessage,
                     deletingStatusText: config.messages.delete.deletingStatusText,
                     deletingFailedText: config.messages.delete.deletingFailedText,
                     enabled: true,
-                    endpoint: _.getDataUrl('file_delete')
+                    endpoint: _.getDataUrl('file_delete'),
+                    params: {
+                        fieldReference: fieldReference
+                    }
                 },
                 validation: {
                     sizeLimit: config.max_file_size,

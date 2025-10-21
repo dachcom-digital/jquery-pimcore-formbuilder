@@ -60,6 +60,7 @@
                 $template = $el.find('.dropzone-template'),
                 $element = $el.find('.dropzone-container'),
                 fieldId = $el.data('field-id'),
+                fieldReference = $el.data('fieldReference') ?? '',
                 storageFieldId = fieldId + '_data',
                 $storageField = this.$form.find('input[type="hidden"][id="' + storageFieldId + '"]'),
                 config = $el.data('engine-options'),
@@ -86,7 +87,8 @@
                             type: 'DELETE',
                             url: _.getDataUrl('file_delete') + '/' + file.upload.uuid,
                             data: {
-                                uploadStatus: file.status
+                                uploadStatus: file.status,
+                                fieldReference: fieldReference
                             },
                             success: function (response) {
 
@@ -105,6 +107,7 @@
                     this.on('sending', function (file, xhr, formData) {
                         $submitButton.attr('disabled', 'disabled');
                         formData.append('uuid', file.upload.uuid);
+                        formData.append('fieldReference', fieldReference);
                     });
 
                     this.on('complete', function (file) {
